@@ -111,9 +111,6 @@ export default function HomePage() {
               >
                 {messages[index]}
               </p>
-              <p className="text-base md:text-lg text-rose-400">
-                คำถามง่ายๆ ที่หัวใจอยากได้ยิน 💗 กด YES แล้วไปต่อพร้อมกันน้า
-              </p>
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-4 mt-6 w-full">

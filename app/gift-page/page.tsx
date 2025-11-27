@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useMemo, useState } from "react";
 
 export default function GiftPage() {
@@ -31,16 +30,12 @@ export default function GiftPage() {
         <h1 className="text-3xl md:text-4xl font-bold text-rose-700">
           เปิดกล่องของขวัญแล้ว ตามมาถึงภารกิจต่อไป!
         </h1>
-        <p className="text-base md:text-lg text-rose-500 max-w-xl">
-          กดปุ่มเปิดท้ายรถเพื่อดูความลับที่เก็บไว้ให้ เงี่ยหูฟังหัวใจ แล้วไปดูท้ายรถพร้อมกันนะ 💖
-        </p>
 
-        <div className="relative w-full max-w-sm aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl ring-4 ring-white/60 animate-photo-pop">
-          <Image src="/Plub.png" alt="Our facetime memory" fill className="object-cover" priority />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-          <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-xl font-semibold drop-shadow-lg animate-soft-bounce">
-            ยิ้มไว้ก่อนนะ
-          </p>
+        <div className="trunk-note" role="presentation" aria-hidden={false}>
+          <div className="trunk-note__badge">MISSION</div>
+          <div className="trunk-note__car">🚗</div>
+          <p className="trunk-note__text">ไปดูท้ายรถ</p>
+          <span className="trunk-note__arrow">⬇</span>
         </div>
       </section>
 

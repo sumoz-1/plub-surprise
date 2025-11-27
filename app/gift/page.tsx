@@ -55,19 +55,22 @@ export default function GiftIconPage() {
           disabled={isClicked}
         >
           <div className={giftBoxClasses}>
-            <span className="gift-box__lid" />
-            <span className="gift-box__ribbon-vertical" />
-            <span className="gift-box__ribbon-horizontal" />
-            <span className="gift-box__body" />
+            <span className="gift-box__shadow" aria-hidden />
+            <span className="gift-box__body" aria-hidden />
+            <span className="gift-box__top" aria-hidden />
+            <span className="gift-box__bow-center" aria-hidden />
+            <span className="gift-box__bow-left" aria-hidden />
+            <span className="gift-box__bow-right" aria-hidden />
+            <span className="gift-box__ribbon-vertical" aria-hidden />
+            <span className="gift-box__ribbon-horizontal" aria-hidden />
+            <span className="gift-box__interior-glow" aria-hidden />
+            <span className="gift-box__tag" aria-hidden>
+              for U
+            </span>
             <span className="gift-box__sparkles gift-box__sparkles--left">✦</span>
             <span className="gift-box__sparkles gift-box__sparkles--right">✦</span>
           </div>
         </button>
-
-        <div className="flex items-center gap-2 text-rose-500 text-sm md:text-base">
-          <span className="inline-flex h-2 w-2 rounded-full bg-rose-300 animate-ping-fast" aria-hidden="true" />
-          <span>เปิดแล้วรอต่ออีกนิด จะมีอะไรสนุกต่อแน่ๆ</span>
-        </div>
       </div>
     </main>
   );
