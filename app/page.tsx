@@ -93,16 +93,19 @@ export default function HomePage() {
               </div>
 
               <div className="absolute -bottom-10 -left-6 w-28 h-28 rounded-3xl border-4 border-white shadow-md bg-gradient-to-br from-rose-200 to-pink-200 flex items-center justify-center animate-float-slow z-10">
-                <Image
-                  src="/love.png"
-                  alt="Two cute characters in love"
-                  width={80}
-                  height={80}
-                />
+                <div className="cute-love-icon" />
               </div>
 
               <div className="absolute -bottom-6 -right-2 w-24 h-24 rounded-3xl border-4 border-white shadow-md bg-gradient-to-br from-rose-200 to-pink-200 flex items-center justify-center animate-float-slow">
-                <Image src="/flower.png" alt="A little surprise flower" width={72} height={72} />
+                <div className="cute-flower-icon" />
+              </div>
+
+              <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-20 h-20 rounded-2xl border-3 border-white shadow-lg bg-gradient-to-br from-yellow-200 to-orange-200 flex items-center justify-center animate-soft-bounce z-10">
+                <div className="cute-star-icon" />
+              </div>
+
+              <div className="absolute top-1/4 -right-8 w-16 h-16 rounded-2xl border-3 border-white shadow-md bg-gradient-to-br from-purple-200 to-pink-200 flex items-center justify-center animate-float-slow">
+                <div className="cute-heart-icon" />
               </div>
             </div>
 

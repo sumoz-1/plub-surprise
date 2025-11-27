@@ -519,3 +519,101 @@ body {
   }
 }
 
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.cute-love-icon {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  background: linear-gradient(135deg, #fecdd3, #fb7185);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+}
+
+.cute-love-icon::before {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #fecdd3, #fb7185);
+  border-radius: 50% 50% 0 50%;
+  right: -16px;
+  top: 0;
+}
+
+.cute-flower-icon {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  background: radial-gradient(circle at 30% 30%, #fef3c7, #fbbf24);
+  border-radius: 50%;
+  box-shadow: inset 0 0 8px rgba(251, 191, 36, 0.3);
+}
+
+.cute-flower-icon::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #fef3c7, #fbbf24);
+  border-radius: 50% 0;
+  top: 4px;
+  left: 12px;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cute-flower-icon::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #fef3c7, #fbbf24);
+  border-radius: 50% 0;
+  bottom: 4px;
+  right: 12px;
+  transform: rotate(135deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cute-star-icon {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  background: linear-gradient(135deg, #fef3c7, #fbbf24);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  box-shadow: 0 2px 8px rgba(251, 191, 36, 0.4);
+}
+
+.cute-heart-icon {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  background: linear-gradient(135deg, #fecdd3, #fb7185);
+  transform: rotate(-45deg);
+  border-radius: 50% 50% 50% 0;
+}
+
+.cute-heart-icon::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #fecdd3, #fb7185);
+  border-radius: 50% 50% 0 50%;
+  right: -12px;
+  top: 0;
+}
+
