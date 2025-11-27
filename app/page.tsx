@@ -51,6 +51,11 @@ export default function HomePage() {
     router.push("/gift");
   };
 
+  const handleRestart = () => {
+    setIndex(0);
+    router.refresh();
+  };
+
   const floatingHearts = [
     "top-[6%] left-[8%]",
     "top-[18%] right-[12%]",
@@ -63,6 +68,15 @@ export default function HomePage() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-white">
       <div className="relative min-h-screen w-full bg-gradient-to-b from-rose-50 via-pink-50 to-white overflow-hidden px-4 py-12">
+        <div className="absolute top-6 right-6 z-20">
+          <button
+            type="button"
+            onClick={handleRestart}
+            className="px-4 py-2 rounded-full bg-white/80 text-rose-500 font-semibold shadow-md border border-rose-100 hover:bg-white transition-all duration-200"
+          >
+            ↺ เริ่มใหม่
+          </button>
+        </div>
         {floatingHearts.map((position, idx) => (
           <span
             key={position}
