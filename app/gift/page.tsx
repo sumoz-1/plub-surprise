@@ -9,6 +9,14 @@ export default function GiftIconPage() {
   const router = useRouter();
 
   useEffect(() => {
+    if (typeof window !== "undefined" && typeof performance !== "undefined") {
+      const [navEntry] = performance.getEntriesByType?.("navigation") as PerformanceNavigationTiming[];
+      if (navEntry?.type === "reload") {
+        router.replace("/");
+        return;
+      }
+    }
+
     if (!isClicked) return undefined;
 
     setStatusText("กล่องกำลังค่อยๆ เปิดอยู่ ✨");

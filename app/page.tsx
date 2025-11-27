@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const messages = [
   "Do you love me?",
@@ -47,13 +47,16 @@ export default function HomePage() {
     setIndex((prev) => (prev < messages.length - 1 ? prev + 1 : prev));
   };
 
+  useEffect(() => {
+    if (typeof window === "undefined" || typeof performance === "undefined") return;
+    const [navEntry] = performance.getEntriesByType?.("navigation") as PerformanceNavigationTiming[];
+    if (navEntry?.type === "reload") {
+      setIndex(0);
+    }
+  }, []);
+
   const handleYesClick = () => {
     router.push("/gift");
-  };
-
-  const handleRestart = () => {
-    setIndex(0);
-    router.refresh();
   };
 
   const floatingHearts = [
@@ -68,15 +71,6 @@ export default function HomePage() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-white">
       <div className="relative min-h-screen w-full bg-gradient-to-b from-rose-50 via-pink-50 to-white overflow-hidden px-4 py-12">
-        <div className="absolute top-6 right-6 z-20">
-          <button
-            type="button"
-            onClick={handleRestart}
-            className="px-4 py-2 rounded-full bg-white/80 text-rose-500 font-semibold shadow-md border border-rose-100 hover:bg-white transition-all duration-200"
-          >
-            ↺ เริ่มใหม่
-          </button>
-        </div>
         {floatingHearts.map((position, idx) => (
           <span
             key={position}

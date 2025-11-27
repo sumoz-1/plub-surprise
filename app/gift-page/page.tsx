@@ -1,10 +1,20 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 
 export default function GiftPage() {
   const [isTrunkOpen, setIsTrunkOpen] = useState(false);
   const [isButtonPressed, setIsButtonPressed] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (typeof window === "undefined" || typeof performance === "undefined") return;
+    const [navEntry] = performance.getEntriesByType?.("navigation") as PerformanceNavigationTiming[];
+    if (navEntry?.type === "reload") {
+      router.replace("/");
+    }
+  }, [router]);
 
   const handleTrunkButton = () => {
     if (!isButtonPressed) {
