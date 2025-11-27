@@ -64,8 +64,10 @@ export default function GiftIconPage() {
         >
           <div className={giftBoxClasses}>
             <span className="gift-box__shadow" aria-hidden />
+            <span className="gift-box__side" aria-hidden />
             <span className="gift-box__body" aria-hidden />
             <span className="gift-box__top" aria-hidden />
+            <span className="gift-box__lid-lip" aria-hidden />
             <span className="gift-box__bow-center" aria-hidden />
             <span className="gift-box__bow-left" aria-hidden />
             <span className="gift-box__bow-right" aria-hidden />
@@ -75,6 +77,9 @@ export default function GiftIconPage() {
             <span className="gift-box__tag" aria-hidden>
               for U
             </span>
+            <span className="gift-box__confetti gift-box__confetti--one" aria-hidden />
+            <span className="gift-box__confetti gift-box__confetti--two" aria-hidden />
+            <span className="gift-box__confetti gift-box__confetti--three" aria-hidden />
             <span className="gift-box__sparkles gift-box__sparkles--left">✦</span>
             <span className="gift-box__sparkles gift-box__sparkles--right">✦</span>
           </div>

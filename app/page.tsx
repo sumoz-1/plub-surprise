@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
 const messages = [
@@ -15,7 +15,6 @@ const messages = [
 
 export default function HomePage() {
   const [index, setIndex] = useState(0);
-  const router = useRouter();
 
   const isLast = index === messages.length - 1;
 
@@ -54,10 +53,6 @@ export default function HomePage() {
       setIndex(0);
     }
   }, []);
-
-  const handleYesClick = () => {
-    router.push("/gift");
-  };
 
   const floatingHearts = [
     "top-[6%] left-[8%]",
@@ -122,9 +117,9 @@ export default function HomePage() {
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-4 mt-6 w-full">
-              <button type="button" onClick={handleYesClick} className={yesButtonClasses}>
+              <Link href="/gift" className={yesButtonClasses} prefetch>
                 Yes
-              </button>
+              </Link>
 
               {!isLast && (
                 <button
