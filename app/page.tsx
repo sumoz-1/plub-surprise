@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 
 const messages = [
-  "I love you",
+  "Do you love me?",
   "I miss you",
   "I want to be with you",
   "I need you",
@@ -51,37 +51,87 @@ export default function HomePage() {
     router.push("/gift");
   };
 
+  const floatingHearts = [
+    "top-[6%] left-[8%]",
+    "top-[18%] right-[12%]",
+    "bottom-[14%] left-[10%]",
+    "bottom-[8%] right-[6%]",
+    "top-1/2 left-[2%]",
+    "top-1/3 right-[4%]"
+  ];
+
   return (
     <main className="min-h-screen flex items-center justify-center bg-white">
-      <div className="flex flex-col items-center justify-center px-4 w-full max-w-md space-y-8">
-        <div className="w-40 h-40 relative">
-          <Image
-            src="/love.png"
-            alt="Two cute characters in love"
-            fill
-            className="object-contain"
-            priority
-          />
-        </div>
+      <div className="relative min-h-screen w-full bg-gradient-to-b from-rose-50 via-pink-50 to-white overflow-hidden px-4 py-12">
+        {floatingHearts.map((position, idx) => (
+          <span
+            key={position}
+            className={`heart-floating ${position}`}
+            aria-hidden="true"
+            style={{ animationDelay: `${idx * 0.4}s` }}
+          >
+            💕
+          </span>
+        ))}
 
-        <p className="text-center text-3xl md:text-4xl font-bold text-red-500 transition-all duration-300">
-          {messages[index]}
-        </p>
+        <div className="relative z-10 mx-auto w-full max-w-3xl">
+          <section className="cute-card space-y-8 text-center">
+            <div className="relative flex items-center justify-center">
+              <div className="floating-blob" />
 
-        <div className="flex items-center justify-center space-x-4 mt-4 w-full">
-          <button type="button" onClick={handleYesClick} className={yesButtonClasses}>
-            Yes
-          </button>
+              <div className="relative w-64 h-64 rounded-[2.5rem] overflow-hidden shadow-2xl ring-4 ring-white/60 animate-photo-pop">
+                <Image
+                  src="/Plub.png"
+                  alt="Us smiling together"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
 
-          {!isLast && (
-            <button
-              type="button"
-              onClick={handleNoClick}
-              className="px-6 py-2 rounded-full bg-red-500 text-white font-semibold shadow-md hover:bg-red-600 transition-all duration-300"
-            >
-              No
-            </button>
-          )}
+              <div className="absolute -bottom-10 -left-6 w-28 h-28 rounded-3xl border-4 border-white shadow-md bg-gradient-to-br from-rose-200 to-pink-200 flex items-center justify-center animate-float-slow z-10">
+                <Image
+                  src="/love.png"
+                  alt="Two cute characters in love"
+                  width={80}
+                  height={80}
+                />
+              </div>
+
+              <div className="absolute -bottom-6 -right-2 w-24 h-24 rounded-3xl border-4 border-white shadow-md bg-gradient-to-br from-rose-200 to-pink-200 flex items-center justify-center animate-float-slow">
+                <Image src="/flower.png" alt="A little surprise flower" width={72} height={72} />
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <p className="text-sm uppercase tracking-[0.3em] text-rose-400">question of the day</p>
+              <p
+                className="text-center text-3xl md:text-4xl font-bold text-rose-600 transition-all duration-300"
+                aria-live="polite"
+              >
+                {messages[index]}
+              </p>
+              <p className="text-base md:text-lg text-rose-400">
+                คำถามง่ายๆ ที่หัวใจอยากได้ยิน 💗 กด YES แล้วไปต่อพร้อมกันน้า
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-6 w-full">
+              <button type="button" onClick={handleYesClick} className={yesButtonClasses}>
+                Yes
+              </button>
+
+              {!isLast && (
+                <button
+                  type="button"
+                  onClick={handleNoClick}
+                  className="px-6 py-2 rounded-full border-2 border-rose-200 text-rose-500 font-semibold shadow-sm bg-white/80 hover:bg-rose-50 transition-all duration-300 hover:-translate-y-0.5"
+                >
+                  No
+                </button>
+              )}
+            </div>
+          </section>
         </div>
       </div>
     </main>
