@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Valentine for My Love",
+  title: "Plub",
   description: "A cute Valentine website built with Next.js and Tailwind CSS"
 };
 
